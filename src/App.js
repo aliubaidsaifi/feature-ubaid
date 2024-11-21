@@ -1,20 +1,25 @@
-// App.js
 import React from 'react';
- import {Routes, Route} from 'react-router-dom';
- import Navbar from './Components/Navbar';
-import Admin from './Pages/Admin';
-import Books from './Pages/Books';
+import {Routes, Route} from 'react-router-dom';
+import Author from './Pages/Admin/Author';
+import Book from './Pages/Admin/Book';
+import Category from './Pages/Admin/Category';
+import Login from './Pages/Admin/Login';
+import SignUp from './Pages/Admin/SignUp';
+import Dashboard from './Pages/Admin/Dashboard'
 
 
 const App = () => {
     return (
         <div>
-    
-        <Navbar/>
+        <Dashboard>
         <Routes>
-            <Route path='/admin' element={<Admin/>}/>
-            <Route path='/books' element={<Books/>}/>
+            <Route path='/author' element={<Author/>}/>
+            <Route path='/category' element={<Category/>}/>
+            <Route path='/book' element={<Book/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/signup' element={<SignUp/>}/>           
         </Routes>
+        </Dashboard>
         </div>
     );
 };

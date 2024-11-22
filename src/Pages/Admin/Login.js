@@ -13,14 +13,14 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:8000/api/user/login', { email, password });
-  
+
       if (response.data.message === 'Logged in successfully') {
         toast.success("Login successful!");
         localStorage.setItem('isLoggedIn', true);
-        localStorage.setItem('userName', response.data.name); 
+        localStorage.setItem('userName', response.data.user.username); 
         setEmail('');
         setPassword('');
-        navigate('/');
+        navigate('/'); 
       } else {
         toast.error("Invalid email or password");
       }

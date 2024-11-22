@@ -4,7 +4,7 @@ import { FaBars } from 'react-icons/fa';
 
 const Navbar = ({ toggleSidebar }) => {
   const navigate = useNavigate();
-  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const isLoggedIn = localStorage.getItem('isLoggedIn'); // Check if user is logged in
   const userName = localStorage.getItem('userName'); // Fetch user's name from localStorage
 
   const handleLogout = () => {
